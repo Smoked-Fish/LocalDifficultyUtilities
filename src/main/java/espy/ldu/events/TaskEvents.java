@@ -37,7 +37,7 @@ public class TaskEvents implements ServerTickEvents.EndTick {
     public void onEndTick(MinecraftServer server) {
         for (Iterator<TaskState> it = activeTasks.values().iterator(); it.hasNext();) {
             TaskState task = it.next();
-            task.tick(server);
+            task.tick();
             if (task.isComplete()) {
                 it.remove();
             }
@@ -59,7 +59,7 @@ public class TaskEvents implements ServerTickEvents.EndTick {
             this.time = time;
         }
 
-        void tick(MinecraftServer server) {
+        void tick() {
             int batchSize = CONFIG.serverConfig.regionBatchSize;
 
             for (int i = 0; i < batchSize && index < chunks.size(); i++, index++) {

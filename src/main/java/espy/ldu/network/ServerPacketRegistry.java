@@ -66,9 +66,8 @@ public class ServerPacketRegistry {
             }
         });
 
-        ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
-            ServerPlayNetworking.send(handler.player, new HandshakePacket());
-        });
+        ServerPlayConnectionEvents.JOIN.register((handler, sender, server) ->
+                ServerPlayNetworking.send(handler.player, new HandshakePacket()));
     }
 
     private static ServerWorld getServerWorldFromKey(String key, ServerPlayerEntity player) {
