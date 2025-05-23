@@ -20,7 +20,7 @@ public class ModConfig implements ConfigData {
 
     public static class Server {
         public boolean syncInhabited = true;
-        public int regionMaxChunks = 6255001;
+        public int regionMaxChunks = 250001;
         public int regionBatchSize = 100;
     }
 
