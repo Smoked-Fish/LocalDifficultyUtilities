@@ -1,0 +1,11 @@
+{
+  "text.autoconfig.ldu.title": "Local Difficulty Utilities",
+
+  "text.autoconfig.ldu.option.clientConfig": "Client Settings",
+  "text.autoconfig.ldu.option.clientConfig.restoreLocalDifficultly": "Restore Local Difficulty",
+
+  "text.autoconfig.ldu.option.serverConfig": "Server Settings",
+  "text.autoconfig.ldu.option.serverConfig.syncInhabited": "Inhabited Time Sync",
+  "text.autoconfig.ldu.option.serverConfig.regionMaxChunks": "Region Maximum Chunks",
+  "text.autoconfig.ldu.option.serverConfig.regionBatchSize": "Region Batch Size"
+}

@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "ldu",
+	"version": "${version}",
+	"name": "Local Difficulty Utilities",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/ldu/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"espy.ldu.LocalDifficultyUtilities"
+		],
+		"client": [
+			"espy.ldu.LocalDifficultyUtilitiesClient"
+		],
+		"modmenu": [
+			"espy.ldu.config.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"ldu.mixins.json",
+		{
+			"config": "ldu.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=${loader_version}",
+		"minecraft": "~${minecraft_version}",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
