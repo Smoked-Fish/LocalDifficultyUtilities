@@ -31,7 +31,7 @@ public class ClientPacketRegistry {
                 BlockPos packetBlockPos = new BlockPos(blockPosX, 0, blockPosZ);
 
                 context.player().getWorld().getWorldChunk(packetBlockPos).setInhabitedTime(chunkData.inhabitedTime());
-                context.player().getWorld().getWorldChunk(packetBlockPos).setNeedsSaving(true);
+                context.player().getWorld().getWorldChunk(packetBlockPos).markNeedsSaving();
             }
         });
     }

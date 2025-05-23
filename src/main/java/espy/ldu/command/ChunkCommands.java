@@ -45,7 +45,7 @@ public class ChunkCommands {
             WorldChunk chunk = target.getServerWorld().getWorldChunk(target.getBlockPos());
 
             chunk.setInhabitedTime(time);
-            chunk.setNeedsSaving(true);
+            chunk.markNeedsSaving();
             ctx.getSource().sendMessage(Text.literal("Set inhabited time to " + time + " for chunk at " + chunk.getPos()));
             return 1;
         })))
@@ -58,7 +58,7 @@ public class ChunkCommands {
             WorldChunk chunk = world.getWorldChunk(pos);
 
             chunk.setInhabitedTime(time);
-            chunk.setNeedsSaving(true);
+            chunk.markNeedsSaving();
             ctx.getSource().sendMessage(Text.literal("Set inhabited time to " + time + " for chunk at " + chunk.getPos()));
             return 1;
         }))));

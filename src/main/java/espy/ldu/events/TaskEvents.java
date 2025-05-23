@@ -67,7 +67,7 @@ public class TaskEvents implements ServerTickEvents.EndTick {
                 WorldChunk chunk = world.getChunkManager().getWorldChunk(pos.x, pos.z, false);
                 if (chunk != null) {
                     chunk.setInhabitedTime(time);
-                    chunk.setNeedsSaving(true);
+                    chunk.markNeedsSaving();
                     updated++;
                 }
             }
