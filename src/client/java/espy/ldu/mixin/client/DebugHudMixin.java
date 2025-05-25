@@ -1,6 +1,8 @@
 package espy.ldu.mixin.client;
 
 import espy.ldu.LocalDifficultyUtilities;
+import espy.ldu.network.packet.ChunkSyncRequestPacket;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.DebugHud;
 import net.minecraft.util.math.BlockPos;
@@ -14,6 +16,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.concurrent.CompletableFuture;
+
+import static espy.ldu.network.packet.ChunkSyncRequestPacket.SyncContext.F3_DEBUG_UPDATE;
 
 @Mixin(DebugHud.class)
 public class DebugHudMixin {
@@ -34,6 +38,8 @@ public class DebugHudMixin {
             BlockPos playerPos = client.player.getBlockPos();
             WorldChunk chunk = world.getWorldChunk(playerPos);
             this.chunkFuture = CompletableFuture.completedFuture(chunk);
+
+            ClientPlayNetworking.send(new ChunkSyncRequestPacket(chunk.getPos().x, chunk.getPos().z, F3_DEBUG_UPDATE));
         }
 
         cir.setReturnValue(this.chunkFuture.getNow(null));

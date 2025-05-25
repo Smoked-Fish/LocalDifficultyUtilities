@@ -4,7 +4,7 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import espy.ldu.LocalDifficultyUtilities;
-import espy.ldu.events.TaskEvents;
+import espy.ldu.events.ChunkTaskManager;
 import net.minecraft.command.argument.DimensionArgumentType;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.world.ServerWorld;
@@ -53,12 +53,12 @@ public class InhabitedTimeTask {
 
         LocalDifficultyUtilities.LOGGER.info("Total Chunks Selected: {}", chunks.size());
 
-        TaskEvents.startTask(playerId, source, world, new ArrayList<>(chunks), time);
+        ChunkTaskManager.startTask(playerId, source, world, new ArrayList<>(chunks), time);
         return 1;
     }
 
     public static int cancel(CommandContext<ServerCommandSource> ctx) {
         UUID playerId = Objects.requireNonNull(ctx.getSource().getPlayer()).getUuid();
-        return TaskEvents.cancel(playerId, ctx.getSource()) ? 1 : 0;
+        return ChunkTaskManager.cancel(playerId, ctx.getSource()) ? 1 : 0;
     }
 }

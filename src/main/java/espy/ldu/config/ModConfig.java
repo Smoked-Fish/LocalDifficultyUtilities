@@ -19,7 +19,8 @@ public class ModConfig implements ConfigData {
     }
 
     public static class Server {
-        public boolean syncInhabited = true;
+        public boolean syncInhabitedOnF3 = true;
+        public boolean syncInhabitedOnNewChunk = false;
         public int regionMaxChunks = 250001;
         public int regionBatchSize = 100;
     }

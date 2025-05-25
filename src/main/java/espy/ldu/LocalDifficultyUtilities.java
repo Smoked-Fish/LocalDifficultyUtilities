@@ -24,5 +24,10 @@ public class LocalDifficultyUtilities implements ModInitializer {
 		CommandRegistry.register();
 		ServerPacketRegistry.register();
 		ServerEventRegistry.register();
+
+
+
+
+
 	}
 }
