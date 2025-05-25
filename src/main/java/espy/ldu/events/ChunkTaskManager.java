@@ -12,7 +12,7 @@ import java.util.*;
 
 import static espy.ldu.LocalDifficultyUtilities.CONFIG;
 
-public class TaskEvents implements ServerTickEvents.EndTick {
+public class ChunkTaskManager implements ServerTickEvents.EndTick {
     private static final Map<UUID, TaskState> activeTasks = new HashMap<>();
 
     public static void startTask(UUID playerId, ServerCommandSource source, ServerWorld world, List<ChunkPos> chunks, int time) {
@@ -71,6 +71,8 @@ public class TaskEvents implements ServerTickEvents.EndTick {
                     updated++;
                 }
             }
+
+
 
             int percent = (int)((index / (float)chunks.size()) * 100);
             source.sendMessage(Text.literal("Progress: " + percent + "% (" + updated + "/" + chunks.size() + ")"));

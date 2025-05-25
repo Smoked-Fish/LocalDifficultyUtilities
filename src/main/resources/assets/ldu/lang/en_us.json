@@ -5,7 +5,8 @@
   "text.autoconfig.ldu.option.clientConfig.restoreLocalDifficultly": "Restore Local Difficulty",
 
   "text.autoconfig.ldu.option.serverConfig": "Server Settings",
-  "text.autoconfig.ldu.option.serverConfig.syncInhabited": "Inhabited Time Sync",
+  "text.autoconfig.ldu.option.serverConfig.syncInhabitedOnF3": "Sync On F3",
+  "text.autoconfig.ldu.option.serverConfig.syncInhabitedOnNewChunk": "Sync When Entering Chunk",
   "text.autoconfig.ldu.option.serverConfig.regionMaxChunks": "Region Maximum Chunks",
   "text.autoconfig.ldu.option.serverConfig.regionBatchSize": "Region Batch Size"
 }
